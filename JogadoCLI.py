@@ -40,7 +40,7 @@ class PersonagemCLI(SimpleCLI):
             nome_habilidade = input("Qual o nome da habilidade? ")
             descricao_habilidade = input("Descreva a habilidade: ")
             habilidade = Habilidade(nome_habilidade, descricao_habilidade)
-            habilidades.append(habilidade)
+            habilidades.append(habilidade.to_dict())  # Convertendo a habilidade em dicionário
 
         nome_personagem = input(f"Qual o nome do personagem? ")
         classe_personagem = input(f"Qual a classe do personagem? ")

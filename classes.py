@@ -8,9 +8,20 @@ class Cuidador:
 
 
 class Habilidade:
-    def __init__(self, nome: str, descricao: str = ''):
+    def __init__(self, nome, descricao):
         self.nome = nome
         self.descricao = descricao
+
+    def to_dict(self):
+        return {
+            "nome": self.nome,
+            "descricao": self.descricao
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data["nome"], data["descricao"])
+
 
 class Personagem:
     def __init__(self, nome: str, classe: str, nivel: int, habilidades: List[Habilidade]):
